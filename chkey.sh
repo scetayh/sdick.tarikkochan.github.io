@@ -31,7 +31,7 @@ fi
 
 mv -v "docs/$(cat .sdickey)" "docs/$SDICK_SDICKEY"
 
-echo "$SDICK_SDICKEY" > .sdickey
+printf "$SDICK_SDICKEY" > .sdickey
 
 echo "已成功修改密钥。"
 
