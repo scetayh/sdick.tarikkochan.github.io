@@ -3,29 +3,29 @@
 set -e
 
 if [ ! -f .sdickey ]; then
-	echo "致命错误：无法找到文件\`.sdickey'。请确保你正确克隆了仓库，或向仓库管理员求助。"
+	printf "\e[091m致命错误：\e[0m无法找到文件\`.sdickey'。请确保你正确克隆了仓库，或向仓库管理员求助。\\n"
 	exit 1
 fi
 
 if [ ! -d "docs/$(cat .sdickey)" ]; then
-	echo "致命错误：无法找到目录\`docs/$(cat .sdickey)'。请确保你正确设置了密钥，或向仓库管理员求助。"
+	printf "\e[091m致命错误：\e[0m无法找到目录\`docs/$(cat .sdickey)'。请确保你正确设置了密钥，或向仓库管理员求助。\\n"
 	exit 1
 fi
 
-echo "修改斯迪克平台密钥（Sdickey）。"
+printf "修改斯迪克平台密钥（Sdickey）。\\n"
 
-printf "当前密钥："
+printf "\e[092m当前密钥：\e[091m"
 cat .sdickey
-printf \\n
+printf "\e[0m\\n"
 
-printf "修改密钥为："
+printf "\e[092m修改密钥为：\e[0m"
 read -r SDICK_SDICKEY
 
-printf "再次输入以确认："
+printf "\e[092m再次输入以确认：\e[0m"
 read -r SDICK_SDICKEY_2
 
 if [ "$SDICK_SDICKEY" != "$SDICK_SDICKEY_2" ]; then
-	echo "致命错误：两次输入的密钥不同。"
+	printf "\e[091m致命错误：\e[0m两次输入的密钥不同。\\n"
 	exit 1
 fi
 
