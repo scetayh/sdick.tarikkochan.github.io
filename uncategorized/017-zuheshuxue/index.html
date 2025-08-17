@@ -1,0 +1,959 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  <link rel="canonical" href="https://sdick.tarikkochan.top/uncategorized/017-zuheshuxue/">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>组合数学进阶初步——以防你觉得自己会组合数学 - 斯迪克平台·公测</title>
+
+  
+    <meta name="description" content="组合数学进阶初步——以防你觉得自己会组合数学$$\Large\tt{\text{Produced by KK_pikate &amp; Harvey}}\——迪克2025年3月月报学术栏目$$ 组合数学（Combinatorial mathematics），又称为离散数学。广义的组合数学就是离散数学，狭义的组合数学是离散数学除图论、代数结构、数理逻辑等的部分。组合数学是一门研究离散对象的科学。 为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组合数学进阶初步——以防你觉得自己会组合数学">
+<meta property="og:url" content="https://sdick.tarikkochan.top/uncategorized/017-zuheshuxue/">
+<meta property="og:site_name" content="斯迪克平台·公测">
+<meta property="og:description" content="组合数学进阶初步——以防你觉得自己会组合数学$$\Large\tt{\text{Produced by KK_pikate &amp; Harvey}}\——迪克2025年3月月报学术栏目$$ 组合数学（Combinatorial mathematics），又称为离散数学。广义的组合数学就是离散数学，狭义的组合数学是离散数学除图论、代数结构、数理逻辑等的部分。组合数学是一门研究离散对象的科学。 为">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-16T23:02:28.885Z">
+<meta property="article:author" content="Dick Chicken’s Home">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Dick Chicken’s Home","sameAs":[]},"dateCreated":"2025-03-16T00:00:00+08:00","dateModified":"2025-08-17T07:02:28+08:00","datePublished":"2025-03-16T00:00:00+08:00","description":"","headline":"组合数学进阶初步——以防你觉得自己会组合数学","mainEntityOfPage":{"@type":"WebPage","@id":"https://sdick.tarikkochan.top/uncategorized/017-zuheshuxue/"},"publisher":{"@type":"Organization","name":"Dick Chicken’s Home","sameAs":[]},"url":"https://sdick.tarikkochan.top/uncategorized/017-zuheshuxue/","thumbnailUrl":null,"image":[]}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" text-indent><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/static/images/logo.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">斯迪克平台·公测</div><div class="sub normal cap">Sdick Platform (gamma)</div><div class="sub hover cap" style="opacity:0">“迪克系列”托管站点</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/uncategorized/017-zuheshuxue/"><span class="title">组合数学进阶初步——以防你觉得自己会组合数学</span></a><a class="item title" href="/gushixinbian/gushixinbian-005-tonghua/"><span class="title">童话之外的往事（2）</span></a><a class="item title" href="/uncategorized/001-yiwanyuan/"><span class="title">一万元</span></a><a class="item title" href="/jindikebei/2/jindikebei-2-000-tongzhi/"><span class="title">关于举办第二届“金迪克杯”的通知</span></a><a class="item title" href="/jindikebei/3/jindikebei-3-001/"><span class="title">jindikebei-3-001</span></a><a class="item title" href="/jindikebei/3/jindikebei-3-000-shixingan/"><span class="title">关于举办第三届“金迪克杯”暨“大煞杯”的实行案</span></a><a class="item title" href="/jindikebei/jindikebei-001-biaobencaoan/"><span class="title">“毕斯特杯”文学竞赛规章细则与宣传工作执行标本（试行案）（草案）</span></a><a class="item title" href="/jindikebei/jindikebei-002-biaoben/"><span class="title">“毕斯特杯”文学竞赛规章细则与宣传工作执行标本（试行案）</span></a><a class="item title" href="/jindikebei/2/jindikebei-2-012-jia/"><span class="title">假</span></a><a class="item title" href="/jindikebei/2/jindikebei-2-011-yongyule/"><span class="title">永遇乐·高二期末考试有感</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><a class="author" href="/author/a023a/">KK</a><span class="sep"></span><span class="text created"><time datetime="2025-03-15T16:00:00.000Z">2025-3-16</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-16T23:02:28.885Z">2025-8-17</time></span></div></div></div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="组合数学进阶初步——以防你觉得自己会组合数学"><a href="#组合数学进阶初步——以防你觉得自己会组合数学" class="headerlink" title="组合数学进阶初步——以防你觉得自己会组合数学"></a>组合数学进阶初步——以防你觉得自己会组合数学</h1><p>$$<br>\Large\tt{\text{Produced by KK_pikate &amp; Harvey}}\<br>——迪克2025年3月月报学术栏目<br>$$</p>
+<p>组合数学（Combinatorial mathematics），又称为离散数学。广义的组合数学就是离散数学，狭义的组合数学是离散数学除图论、代数结构、数理逻辑等的部分。组合数学是一门研究离散对象的科学。</p>
+<p>为了进一步推动迪克报社发展，<del>并一定程度上防止被叫卷苟</del>，所以投稿到迪克3月月报上，<del>并祸害更多的同学</del>。笔者认为，与其通过大家早就知道的知识来构建知识体系，不如通过更高等的知识来构建，<del>就像笔者本人关于微积分的知识体系的构建花了一两年一样</del>，这里推荐一下德国数学家菲利克斯·克莱因（Felix Christian Klein）的《高观点下的初等数学》（<del>真的有人会这么闲吗</del>）。关于思维方面的书籍，笔者推荐大数学家G.波利亚（George Pólya）的 《How to Solve It》。本文章将默认各位读者已经掌握了高考所需掌握的组合数学内容，并对容斥原理有初步的了解（理解反演之前的基本容斥内容）。文中所有的组合数 $C_n^m$ 将表示成 $\binom{n}{m}$ 。少部分内容可能不易直接在网上找到。</p>
+<p>——CAUTION——：高考不考，大部分内容高联也不涉及</p>
+<p><del>我嘞个数学阅读啊</del></p>
+<h2 id="生成函数（GF）"><a href="#生成函数（GF）" class="headerlink" title="生成函数（GF）"></a>生成函数（GF）</h2><p>生成函数又称母函数。在介绍生成函数前先来了解一下广义二项式定理。</p>
+<p>什么？你说生成函数并不严格属于离散数学？这不重要。</p>
+<h3 id="广义二项式定理"><a href="#广义二项式定理" class="headerlink" title="广义二项式定理"></a>广义二项式定理</h3><p>大数学家、大物理学家艾萨克·牛顿的墓碑上刻着的唯一公式既不是关于牛顿力学，也不是关于微积分，而是 $(P+PQ)^{\frac{m}{n}}&#x3D;P^{\frac{m}{n}}+\frac{m}{n} AQ+\frac{m-n}{2n} BQ+\frac{m-2n}{3n} CQ+\frac{m-3n}{4n}DQ+⋯$ ，这个公式名为牛顿二项式，事实上，后来的微积分正是由牛顿二项式孕育而来。</p>
+<p>牛顿二项式写成大家熟悉的形式就是 $(1+x)^p&#x3D;1+px+\frac{p(p-1)}{2!}x^2+\frac{p(p-1)(p-2)}{3!}x^3 +\cdot\cdot\cdot$ ，其中 $p\in \Bbb{Q}$ 。</p>
+<p>牛顿猜测出这样的展开式之后并没有给出证明，最终实数域和复数域的证明由欧拉和柯西分别完成。</p>
+<p>广义二项式定理：<br>$$<br>\boxed{(x+y)^\alpha&#x3D;\sum\limits_{k&#x3D;0}^{\infty}\binom{\alpha}{k}x^{\alpha-k}y^k}<br>$$<br>其中， $\binom{\alpha}{k}&#x3D;\frac{\alpha(\alpha-1)\cdots(\alpha-k+1)}{k!},\alpha\in\Bbb{C},k\in\Bbb{N}$ （离散时，若 $m&lt;0~\or m&gt;n$ ，则 $\binom{n}{m}&#x3D;0$ ）。</p>
+<p>广义二项式定理的证明需要用到高等数学，在此不赘述。</p>
+<p>使用平凡广义二项式定理可以得到部分代数式的幂级数展开：<br>$$<br>\frac{1}{1-x}&#x3D;1+x+x^2+x^3+\cdots\tag{<em>}\<br>\frac{1}{1+x}&#x3D;1-x+x^2-x^3+\cdots\<br>$$<br> $(</em>)$ 式又被称作无穷递缩等比数列求和公式。</p>
+<p>通过其他方法，还可以得到<br>$$<br>\frac{1}{(1-x)^k}&#x3D;\sum\limits_{n&#x3D;0}^{\infty}\binom{n+k-1}{k-1}x^n\<br>e^x&#x3D;\sum\limits_{n\ge0}\frac{1}{n!}x^n\<br>————etc.————<br>$$<br>在此不做详细介绍。</p>
+<h3 id="第一类生成函数（普通型生成函数OGF）"><a href="#第一类生成函数（普通型生成函数OGF）" class="headerlink" title="第一类生成函数（普通型生成函数OGF）"></a>第一类生成函数（普通型生成函数OGF）</h3><p>我们称形式幂级数 $F(x)&#x3D;\sum\limits_{k&#x3D;0}^{\infty}a_kx^k$ 为 ${a_n}$ 的第一类生成函数，OGF常常和“无标号”计数有关。在形式幂级数中， $x$ 从来不指定一个数值，且对收敛和发散的问题不感兴趣，感兴趣的是系数序列 ${a_n}$ 。</p>
+<h3 id="第二类生成函数（指数型生成函数EGF）"><a href="#第二类生成函数（指数型生成函数EGF）" class="headerlink" title="第二类生成函数（指数型生成函数EGF）"></a>第二类生成函数（指数型生成函数EGF）</h3><p>对于 ${a_n}$ ，其第二类生成函数定义为 $\hat F(x)&#x3D;\sum\limits_{k&#x3D;0}^{\infty}a_k\frac{x^k}{k!}$ ，EGF常常与“有标号”计数相关，更确切地说，EGF 主要被用于处理若干序列的合并问题。</p>
+<h3 id="狄利克雷生成函数（DGF）"><a href="#狄利克雷生成函数（DGF）" class="headerlink" title="狄利克雷生成函数（DGF）"></a>狄利克雷生成函数（DGF）</h3><p>生成函数还有狄利克雷生成函数 $\tilde F(x) &#x3D; \sum\limits_{k\ge 1}\frac{f_k}{k^x}$ 。</p>
+<p>后两种生成函数<del>由于笔者不会</del>，暂不做讨论。</p>
+<h2 id="卡特兰数（Catalan数）"><a href="#卡特兰数（Catalan数）" class="headerlink" title="卡特兰数（Catalan数）"></a>卡特兰数（Catalan数）</h2><p><del>终于进入本文章想要重点介绍的地方了</del>（至于为什么是终于，那是因为 $\LaTeX$ 打着实在太累人了）</p>
+<p>卡特兰数，又称明安图数，是组合数学中第一个初高中没教过的知识点，在组合数学中出现频繁，最早在推导三角函数的幂级数时被发现。其定义十分丰富，感兴趣的可以自行查阅，<del>绝对不是笔者想找其组合意义合集没找到</del>。</p>
+<h3 id="通过路径方案数定义（很直观）"><a href="#通过路径方案数定义（很直观）" class="headerlink" title="通过路径方案数定义（很直观）"></a>通过路径方案数定义（很直观）</h3><p>考虑在平面直角坐标系中从 $(0,0)$ 开始，每次向上或者向右走一格，走到 $(n,m)$ 的方案数，显然答案为 $\binom{n+m}{n}$ 。在此基础上规定，走的过程中不能触碰到直线 $y&#x3D;x+1$ ，走到 $(n,n)$ 的方案数即为卡特兰数 $H(n)$ 。</p>
+<p>考虑将路径画出，在不违背“每次只能向上或者向右走一步”的前提下，每个非法方案都触碰了 $y&#x3D;x+1$ 至少一次，设该方案第一次触碰 $y&#x3D;x+1$ 时的点为 $A$ 点，将 $A$ 点之后的路径沿 $y&#x3D;x+1$ 翻折，终点变为 $(n-1,n+1)$ ，则每条到达 $(n,n)$ 的非法路径都唯一对应着一条到达 $(n-1,n+1)$ 的无限制路径，不难发现到达 $(n-1,n+1)$ 的每条路径都必定触碰至少一次直线 $y&#x3D;x+1$ ，则每条到达 $(n-1,n+1)$ 都唯一对应一条到达 $(n,n)$ 的非法路径，故到达 $(n,n)$ 非法路径与到达 $(n-1,n+1)$ 的无限制路径形成双射，所以到达 $(n,n)$ 的非法方案数为 $\binom{2n}{n-1}$，得到卡特兰数的通项公式 $\boxed{H(n)&#x3D;\binom{2n}{n}-\binom{2n}{n-1}}$ 。</p>
+<p>由该式还可以导出卡特兰数的递推式 $H(n)&#x3D;\frac{4n-2}{n+1}H(n-1)$ 。</p>
+<h3 id="通过合法括号序列数定义（直观但是难算）"><a href="#通过合法括号序列数定义（直观但是难算）" class="headerlink" title="通过合法括号序列数定义（直观但是难算）"></a>通过合法括号序列数定义（直观但是难算）</h3><p>定义空串为一个合法括号序列，若括号序列 $S$ 和 $T$ 合法，则 $(S)$ 和 $ST$ 均为合法括号序列。人话：左右括号恰好完全匹配的括号序列为合法括号序列（前者定义更为严谨和常见）。</p>
+<p>长度为 $2n$ 的合法括号序列的总数即为卡特兰数 $H(n)$ ，与上面一种定义的等价性显然。</p>
+<p>这里使用动态规划的思想解决问题（可以浅层次地理解为递推递归）。对于这个长度为 $2n$ 的括号序列，在位置 $2k$ 之后将该序列分成 $[1,2k]$ 和 $[2k+1,2n]$ 两半（可以为空串），有的人这时候会激动，直接将方案数加上 $H(n)H(n-k)$ ，但是这样会因形如 $RST$ 的括号序列而导致重复（ $R,S,T$ 均为合法括号序列）（这类问题非常容易造成重复），为了避免重复，只计数形如 $(S)T$ 的括号序列（因为 $(S)$ 必定不能被分割），其贡献为 $H(k-1)H(n-k)$ ，所以我们可以得到卡特兰数的封闭形式递推式为 $H(n)&#x3D;\sum\limits_{k&#x3D;1}\limits^nH(k-1)H(n-k)$ 。</p>
+<p>该式等号右侧形式为两个相同的乘积之和，且每一项的自变量之和恒定，所以考虑使用生成函数来证明该式与通项公式等价。专业地，卡特兰数的封闭形式递推式与卷积的形式很相似，因此我们用卷积来构造关于 $H(n)$ 的方程。</p>
+<p>构造 $H(n)$ 的生成函数为 $G(x)&#x3D;\sum\limits_{i&#x3D;0}\limits^{\infty}H(i)x^i$ ，根据递归式寻找方程得到<br>$$<br>G^2(x)&#x3D;\sum\limits_{n&#x3D;0}^{\infty}\sum\limits_{k&#x3D;0}^{n}H(k)H(n-k)x^n&#x3D;\frac{1}{x}\sum\limits_{n&#x3D;1}^{\infty}\sum\limits_{k&#x3D;0}^{n-1}H(k)H(n-1-k)x^{n}&#x3D;\frac{1}{x}\sum\limits_{n&#x3D;1}^{\infty}H(n)x^n&#x3D;\frac{1}{x}G(x)-1<br>$$<br>解得 $G(x)&#x3D;\frac{1\pm\sqrt{1-4x}}{2x}$ ，那么产生问题：我们应该取哪个根呢？我们将其分子有理化，得到 $G(x)&#x3D;\frac{2}{1\mp\sqrt{1-4x}}$ ，带入 $x&#x3D;0$ 得到 $G(x)$ 的常数项，也就是 $H(0)$ 。当 $G(x)&#x3D;\frac{2}{1+\sqrt{1-4x}}$ 时有 $G(0)&#x3D;1$ 满足要求，而 $G(x)&#x3D;\frac{2}{1-\sqrt{1-4x}}$ 在 $x&#x3D;0$ 处不收敛所以舍弃。因此 $G(x)&#x3D;\frac{1-\sqrt{1-4x}}{2x}$ 。</p>
+<p>对 $G(x)$ 利用广义二项式定理展开得到<br>$$<br>\begin{alignat*}{2}<br>G(x)&amp;&#x3D;\frac{1}{2x}\sum_{n&#x3D;1}^{\infty}{\frac{(-1)^n(2n-3)!!}{2^{n}n!}}(-4x)^n\<br>&amp;&#x3D;\frac{1}{2x}\sum_{n&#x3D;1}^{\infty}{\frac{1}{2^{n}n!}}\frac{(2n-2)!}{(2n-2)!!}(4x)^n\<br>&amp;&#x3D;\sum_{n&#x3D;1}^{\infty}\frac{(2n-2)!}{n!(n-1)!}x^{n-1}\<br>&amp;&#x3D;\sum_{n&#x3D;1}^{\infty}\frac{1}{n}\binom{2n-2}{n-1}x^{n-1}\<br>&amp;&#x3D;\sum_{n&#x3D;0}^{\infty}\frac{1}{n+1}\binom{2n}{n}x^n<br>\end{alignat*}<br>$$<br>所以 $\boxed{H(n)&#x3D;\sum\limits_{k&#x3D;1}^nH(k-1)H(n-k)&#x3D;\frac{1}{n+1}\binom{2n}{n}&#x3D;\binom{2n}{n}-\binom{2n}{n-1}}$ ，证毕。</p>
+<h2 id="折线容斥"><a href="#折线容斥" class="headerlink" title="折线容斥"></a>折线容斥</h2><p>像卡特兰数路径方案数定义中对折线进行翻折等操作来求解的方法叫做折线法。可以从卡特兰数的到达 $(n,n)$ 推广到 $(n,m)$ ，或将直线 $y&#x3D;x+1$ 推广到 $y&#x3D;x+b$ ，求解方法同理。</p>
+<p>继续对卡特兰数进行扩展，将一条直线不能触碰的限制改为两条，变为从 $(0,0)$ 到 $(n,m)$ 并且不能触碰直线 $y&#x3D;x+b$ 和 $y&#x3D;x+c$ 的路径数（保证起点终点在两直线之间）。</p>
+<p>（这或许是本文最困难的地方，笔者当时被大佬一堆“显然”的讲解硬控了好几天没想明白）</p>
+<p>或许有的读者想要效仿上文的做法，直接写出式子 $\binom{n+m}{n}-\binom{n+m}{n+b}-\binom{n+m}{n+c}$ （ $(n,m)$ 关于 $y&#x3D;x+b$ 的对称点为 $(m-b,n+b)$ ），然后，炸了。</p>
+<p>设触碰一次直线 $y&#x3D;x+b$ （设为 $Line<del>A$ ）为事件 $A$ ，触碰一次直线 $y&#x3D;x+c$ （设为 $Line</del>B$ ）为事件 $B$ 。上式 $\binom{n+m}{n+b}$ 是对与 $Line<del>A$ 的第一次触碰点之后的折线做翻折后的方案数，倘若在触碰了 $Line</del>A$ 之前先触碰了 $Line~B$ ，则该路径会被 $\binom{n+m}{n+c}$ 再计算一次，被算重了。故必然需要使用容斥。</p>
+<p>路径的状态可以表示为形如 $AABBAAAABB$ 等的一个字符串，根据卡特兰数通项公式推导过程可以发现连续触碰了几次同一条直线无关痛痒，所以状态简化为 $ABAB$ 。设终点 $(n,m)$ 为点 $P$ ，点 $P$ 关于 $Line<del>A$ 的对称点为点 $P’$ 。从另一个角度审视 $(0,0)\to P’$ 的路径，设该路径最后一次与 $Line</del>A$ 接触的点为点 $X$ ，将 $X\to P’$ 的折线沿 $Line<del>A$ 翻折回来（变为 $X\to P$ ），则 $X\to P$ 必定不与 $Line</del>A$ 接触，所以原路径状态末尾一定为 $A_0$ 或者 $A_0B_0$ （以下用 $\or$ 代替“或者”）。<del>由于我们除了翻折就不会了</del>，考虑将点 $P’$ 沿 $Line<del>B$ 翻折至点 $P’’$ ，则 $(0,0)\to P’’$ 的折线唯一对应一条 $(0,0)\to P’$ 且经过过 $Line</del>B$ 的折线，由于该 $(0,0)\to P’’$ 的折线所映射到的 $(0,0)\to P’$ 的折线最后一定触碰了 $Line<del>A$ ，所以每条 $(0,0)\to P’’$ 的折线唯一映射一条以 $B_1A_0\or B_1A_0B_0$ 为末状态的 $(0,0)\to P$ 的折线。同理构造点 $P’’’$ 为点 $P’’$ 关于 $Line</del>A$ 的对称点，则每条 $(0,0)\to P’’’$ 的折线都唯一映射一条以 $A_1B_1A_0\or A_1B_1A_0B_0$ 为末状态的 $(0,0)\to P$ 的折线。设奇数次沿 $Line<del>A$ 翻折后的点所对应的无限制路径数为 $F_{2k-1}$ ，偶数次沿 $Line</del>B$ 翻折后的点所对应的无限制路径数为 $F_{2k}$ ，则状态以 $A$ 开头的路径的条数为 $\sum\limits_{k\ge1}(-1)^{k-1}F_k$ ，同理可得状态以 $B$ 开头的路径的条数 $\sum\limits_{k\ge1}(-1)^{k-1}G_k$ ，最终答案即为 $\binom{n+m}{n}+\sum\limits_{k\ge1}(-1)^kF_k+\sum\limits_{k\ge1}(-1)^kG_k$ 。</p>
+<p><del>没错问题还可以继续扩展</del>，问题可以继续扩展至限制直线斜率不为 $1$ 的问题，或者三维甚至更高维空间内的问题，由于笔者只是听说过，不作讨论。</p>
+<h2 id="斯特林数（Stirling）"><a href="#斯特林数（Stirling）" class="headerlink" title="斯特林数（Stirling）"></a>斯特林数（Stirling）</h2><h3 id="第一类斯特林数"><a href="#第一类斯特林数" class="headerlink" title="第一类斯特林数"></a>第一类斯特林数</h3><p>将 $n$ 个不同元素构成 $m$ 个圆排列的方案数就是第一类斯特林数，一般记作 $\small\begin{bmatrix}n\m\end{bmatrix}$。考虑其组合意义可以得到递推式 $\small\begin{bmatrix}n\k\end{bmatrix}&#x3D;\begin{bmatrix}n-1\k-1\end{bmatrix}+(n-1)\begin{bmatrix}n-1\k\end{bmatrix}$ 。</p>
+<h3 id="第二类斯特林数"><a href="#第二类斯特林数" class="headerlink" title="第二类斯特林数"></a>第二类斯特林数</h3><p>将 $n$ 个不同元素划分成 $m$ 个非空子集的方案数就是第二类斯特林数，一般记作 $\small\begin{Bmatrix}n\m\end{Bmatrix}$。同理可以得到递推式 $\small\begin{Bmatrix}n\k\end{Bmatrix}&#x3D;\begin{Bmatrix}n-1\k-1\end{Bmatrix}+k\begin{Bmatrix}n-1\k\end{Bmatrix}$ 。第二类斯特林数远比第一类斯特林数应用广泛。</p>
+<p>我们实际上做过本质为第二类斯特林数的题目。对两类斯特林数的进一步认识读者可以自行查阅。</p>
+<h2 id="一些题目"><a href="#一些题目" class="headerlink" title="一些题目"></a>一些题目</h2><p>1.证明 $\sum\limits_{i&#x3D;1}^ni^2\binom{n+i}{i}&#x3D;\frac{n(n+1)^3{\binom{2n+1}{n+1}}}{(n+2)(n+3)}$ .</p>
+<p>2.利用生成函数证明恒等式 $\sum\limits_{i&#x3D;0}^n\binom{n}{i}\binom{n+i}{i}&#x3D;\sum\limits_{i&#x3D;0}^n2^i\binom{n}{i}^2$ 和 $\sum\limits_{k&#x3D;0}^n\small{\begin{pmatrix}n\k\end{pmatrix}}2^{n-k}\small{\begin{pmatrix}k\ [\frac{k}{2}]\end{pmatrix}}&#x3D;\small{\begin{pmatrix}2n+1\n\end{pmatrix}}$ .</p>
+<p>3.已知 $m^n&#x3D;\sum\limits_{i&#x3D;0}^m\small{\begin{Bmatrix}n\i\end{Bmatrix}}m^\underline{i}$ ，试证明 $\sum\limits_{i&#x3D;1}^ni^k&#x3D;\sum\limits_{j&#x3D;0}^n\small{\begin{Bmatrix}k\j\end{Bmatrix}}j!\small{\begin{pmatrix}n+1\j+1\end{pmatrix}}$ .</p>
+<p>4.已知 $m^n&#x3D;\sum\limits_{i&#x3D;0}^m\small{\begin{Bmatrix}n\i\end{Bmatrix}}m^\underline{i}$ ，试证明 $\sum\limits_{i&#x3D;0}^ni^k\binom{n}{i}(\frac{1}{m})^i(\frac{m-1}{m})^{n-i}&#x3D;\frac{1}{m^n}\sum\limits_{j&#x3D;0}^kj!\small{\begin{Bmatrix}k\j\end{Bmatrix}}\binom{n}{j}m^{n-j}$ .</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/yuebao/yuebao-2503/">【月报】2025.3.1 - 2025.3.31 第2刊</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/uncategorized/018-xuanranqi/">Sdick平台渲染器的基本工作原理</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>“迪克系列”正是由像您这样的迪克维护的。欢迎加入讨论!</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="scetayh/sdick-giscus" data-repo-id="R_kgDOOUP53g" data-category="Announcements" data-category-id="DIC_kwDOOUP53s4Coy2X" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="sitemap" style="column-count:4;"><div class="sitemap-group"><span class="fs15">内容</span><a href="/">近期发布</a><a href="/categories/">分类</a><a href="/archives/">归档</a><a href="/liuyanban/">留言板</a><a href="/yinyuehe/">音乐盒</a></div><div class="sitemap-group"><span class="fs15">平台</span><a href="https://sdick.tarikkochan.top">主站点（静态）</a><a target="_blank" rel="noopener" href="https://sdickd.tarikkochan.top">备用站点（动态）</a><a target="_blank" rel="noopener" href="https://sdick-old.tarikkochan.top">旧版平台</a><a target="_blank" rel="noopener" href="https://dickzhouboom.tarikkochan.top">迪克周报托管网站</a></div><div class="sitemap-group"><span class="fs15">GitHub 仓库</span><a target="_blank" rel="noopener" href="https://github.com/scetayh/sdick.tarikkochan.github.io">Pages 托管</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/sdick">源码树</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/sdick-giscus">giscus</a><a target="_blank" rel="noopener" href="https://gitee.com/scetayh/stick/releases">Gitee 发行版</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/mirrors.sdick.tarikkochan.github.io">伪镜像站</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/sdick-old.tarikkochan.github.io">旧版平台 Pages 托管</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/sdick-old">旧版平台源码树</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/dickzhouboom.tarikkochan.github.io">迪克周报托管</a><a target="_blank" rel="noopener" href="https://github.com/scetayh/spt">SPT</a></div><div class="sitemap-group"><span class="fs15">社交</span><a target="_blank" rel="noopener" href="https://blog.tarikkochan.top">运维的部落阁</a></div></div><div class="text"><p>Dick Series © 2024 - 2025 by <a href="/author/b001a">Dick Series Contributors</a> licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise specified</p>
+<blockquote>
+<p>和我签订契约，成为<del>大迪克</del>答题卡吧！<br>Sdick Platform (gamma) 2024 - 2025 by <a href="/author/b004a">Dick Chicken’s Home</a><br>based on <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a><br>隐藏着黑暗力量的迪克啊，在我面前显示你真正的力量！现在以你的主人Dick Chicken’s Home之名命令你——封印解除！</p>
+</blockquote>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E8%BF%9B%E9%98%B6%E5%88%9D%E6%AD%A5%E2%80%94%E2%80%94%E4%BB%A5%E9%98%B2%E4%BD%A0%E8%A7%89%E5%BE%97%E8%87%AA%E5%B7%B1%E4%BC%9A%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6"><span class="toc-text">组合数学进阶初步——以防你觉得自己会组合数学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%EF%BC%88GF%EF%BC%89"><span class="toc-text">生成函数（GF）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="toc-text">广义二项式定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%EF%BC%88%E6%99%AE%E9%80%9A%E5%9E%8B%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0OGF%EF%BC%89"><span class="toc-text">第一类生成函数（普通型生成函数OGF）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%EF%BC%88%E6%8C%87%E6%95%B0%E5%9E%8B%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0EGF%EF%BC%89"><span class="toc-text">第二类生成函数（指数型生成函数EGF）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%EF%BC%88DGF%EF%BC%89"><span class="toc-text">狄利克雷生成函数（DGF）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0%EF%BC%88Catalan%E6%95%B0%EF%BC%89"><span class="toc-text">卡特兰数（Catalan数）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E8%B7%AF%E5%BE%84%E6%96%B9%E6%A1%88%E6%95%B0%E5%AE%9A%E4%B9%89%EF%BC%88%E5%BE%88%E7%9B%B4%E8%A7%82%EF%BC%89"><span class="toc-text">通过路径方案数定义（很直观）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%90%88%E6%B3%95%E6%8B%AC%E5%8F%B7%E5%BA%8F%E5%88%97%E6%95%B0%E5%AE%9A%E4%B9%89%EF%BC%88%E7%9B%B4%E8%A7%82%E4%BD%86%E6%98%AF%E9%9A%BE%E7%AE%97%EF%BC%89"><span class="toc-text">通过合法括号序列数定义（直观但是难算）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E7%BA%BF%E5%AE%B9%E6%96%A5"><span class="toc-text">折线容斥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0%EF%BC%88Stirling%EF%BC%89"><span class="toc-text">斯特林数（Stirling）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="toc-text">第一类斯特林数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="toc-text">第二类斯特林数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%A2%98%E7%9B%AE"><span class="toc-text">一些题目</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":"sdick.tarikkochan.top","officialHosts":["localhost","127.0.0.1","sdickd.tarikkochan.top"],"encoded":"c2RpY2sudGFyaWtrb2NoYW4udG9w"};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.querySelector('#comments #giscus');
+  util.viewportLazyload(el, load_discus, false);
+
+  function load_discus() {
+    if (!el) return;
+    try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
+      }
+      const script = document.createElement('script');
+      script.async = true;
+      for (const key of Object.keys(el.attributes)) {
+        const attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+  }
+</script>
+
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+
+<script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script defer type="text/javascript" src="https://gcore.jsdelivr.net/npm/mermaid@v9/dist/mermaid.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var mermaid_config = {
+      startOnLoad: true,
+      theme:
+        "auto" == "auto" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "neutral",
+      logLevel: 3,
+      themeVariables: {
+        darkMode: true
+      },
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: "linear"
+      },
+      gantt: {
+        axisFormat: "%Y/%m/%d"
+      },
+      sequence: {
+        actorMargin: 50
+      }
+    }
+    mermaid.initialize(mermaid_config);
+  });
+</script><script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
